@@ -1,4 +1,3 @@
-import { IEmployee } from "../models/IEmployee";
 import { IEmployeeResponse } from "../models/IEmployeeResponse";
 import { getApi } from "./services";
 

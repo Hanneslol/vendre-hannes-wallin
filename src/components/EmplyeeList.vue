@@ -15,7 +15,6 @@ const getPagingEmployees = async (page: number) => {
 };
 onMounted(() => {
   getPagingEmployees(currentPage.value);
-  console.log(total_pages)
 });
 
 const goToPage = (page: number) => {
