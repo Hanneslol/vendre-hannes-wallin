@@ -5,13 +5,29 @@ import { IEmployee } from '../models/IEmployee';
 import { getEmployees } from '../services/employeeService';
 
 const employees = ref<IEmployee[]>([]);
+const currentPage = ref(1);
 
-onMounted(async () => {
-  employees.value = await getEmployees();
+const getPagingEmployees = async (page: number) => {
+  employees.value = await getEmployees(page);
+};
+onMounted(() => {
+  getPagingEmployees(currentPage.value);
 });
+
+const nextPage = () => {
+    currentPage.value++;
+    getPagingEmployees(currentPage.value);
+  }
+
+
+const prevPage = () => {
+    currentPage.value--;
+    getPagingEmployees(currentPage.value)
+  }
+
+
+
 </script>
-
-
 
 
 
@@ -20,8 +36,8 @@ onMounted(async () => {
       <Employee v-for="employee in employees" :key="employee.id" :data="employee" />
     </div>
     <div id="paging">
-        <button>Previous</button>
-        <button>Next</button>
+        <button @click="prevPage">Previous</button>
+        <button @click="nextPage">Next</button>
     </div>
   </template>
   
