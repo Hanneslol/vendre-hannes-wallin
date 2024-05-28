@@ -11,8 +11,7 @@ defineProps<EmployeeProps>();
 
 <template>
   <article>
-    <h2>{{ data.first_name }}</h2>
-    <h2>{{ data.last_name }}</h2>
+    <h2>{{ data.first_name }} {{ data.last_name }}</h2>
     <div class="imgContainer">
       <img :src="data.avatar" :alt="data.first_name" />
     </div>
@@ -23,7 +22,8 @@ defineProps<EmployeeProps>();
 <style scoped lang="scss">
 .imgContainer {
   img {
-    width: 100%;
+    width: 100px;
+    border-radius: 50%;
   }
 }
 </style>
