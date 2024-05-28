@@ -15,16 +15,20 @@ onMounted(() => {
 });
 
 const nextPage = () => {
+    if (currentPage.value < 2){
     currentPage.value++;
     getPagingEmployees(currentPage.value);
   }
-
+}
 
 const prevPage = () => {
+    if (currentPage.value > 1){
+      
     currentPage.value--;
     getPagingEmployees(currentPage.value)
   }
-
+  
+}
 
 
 </script>
@@ -36,8 +40,8 @@ const prevPage = () => {
       <Employee v-for="employee in employees" :key="employee.id" :data="employee" />
     </div>
     <div id="paging">
-        <button @click="prevPage">Previous</button>
-        <button @click="nextPage">Next</button>
+        <button @click="prevPage">1</button>
+        <button @click="nextPage">2</button>
     </div>
   </template>
   
