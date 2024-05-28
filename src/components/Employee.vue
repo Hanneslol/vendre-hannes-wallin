@@ -6,7 +6,6 @@ interface EmployeeProps {
 }
 
 defineProps<EmployeeProps>();
-
 </script>
 
 <template>
@@ -15,8 +14,8 @@ defineProps<EmployeeProps>();
     <div class="imgContainer">
       <img :src="data.avatar" :alt="data.first_name" />
     </div>
-  <h3>{{ data.email }}</h3>
-  <div class="contact">
+    <h3>{{ data.email }}</h3>
+    <div class="contact">
       <a :href="`mailto:${data.email}`">Contact me</a>
     </div>
   </article>
@@ -27,9 +26,16 @@ defineProps<EmployeeProps>();
   img {
     width: 100px;
     border-radius: 50%;
+    min-height: 100px;
+    object-fit: cover;
+    transition: transform 0.2s;
   }
 }
+
+img:hover {
+  transform: scale(1.2);
+}
 h3 {
- font-size: 1rem;
+  font-size: 1rem;
 }
 </style>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import Employee from './Employee.vue';
-import { IEmployee } from '../models/IEmployee';
-import { getEmployees } from '../services/employeeService';
+import { ref, onMounted } from "vue";
+import Employee from "./Employee.vue";
+import { IEmployee } from "../models/IEmployee";
+import { getEmployees } from "../services/employeeService";
 
 const employees = ref<IEmployee[]>([]);
 const total_pages = ref<number>();
@@ -20,44 +20,45 @@ onMounted(() => {
 const goToPage = (page: number) => {
   currentPage.value = page;
   getPagingEmployees(page);
-  
-  
-}
-const nextPage = (total_pages:number) => {
-    if (currentPage.value < total_pages){
+};
+const nextPage = (total_pages: number) => {
+  if (currentPage.value < total_pages) {
     currentPage.value++;
     getPagingEmployees(currentPage.value);
   }
-}
-
+};
 
 const prevPage = () => {
-    if (currentPage.value > 1){
+  if (currentPage.value > 1) {
     currentPage.value--;
-    getPagingEmployees(currentPage.value)
+    getPagingEmployees(currentPage.value);
   }
-  
-}
-
-
+};
 </script>
 
 <template>
-    <div id="employeediv">
-      <Employee v-for="employee in employees" :key="employee.id" :data="employee" />
-    </div>
-    <div id="pagination">
+  <section id="employeediv">
+    <Employee
+      v-for="employee in employees"
+      :key="employee.id"
+      :data="employee"
+    />
+  </section>
+  <section id="pagination">
     <button @click="prevPage">Previous</button>
-    <div v-for ="pageNumber in total_pages">
-        <button @click="goToPage(pageNumber)" :class="{'active-page': pageNumber === currentPage}">{{pageNumber}}</button>
+    <div v-for="pageNumber in total_pages">
+      <button
+        @click="goToPage(pageNumber)"
+        :class="{ 'active-page': pageNumber === currentPage }"
+      >
+        {{ pageNumber }}
+      </button>
     </div>
     <button @click="nextPage(total_pages as number)">Next</button>
-  </div>
-  </template>
-  
+  </section>
+</template>
 
-  
-  <style scoped lang="scss">
+<style scoped lang="scss">
 #employeediv {
   display: flex;
   justify-content: space-evenly;
@@ -78,5 +79,4 @@ button:hover {
   opacity: 1;
   pointer-events: none;
 }
-  </style>
-  
+</style>
