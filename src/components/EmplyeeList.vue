@@ -13,7 +13,7 @@ onMounted(async () => {
 
 
 <template>
-    <div>
+    <div id="employeediv">
       <Employee v-for="employee in employees" :key="employee.id" :data="employee" />
     </div>
   </template>
@@ -21,6 +21,10 @@ onMounted(async () => {
 
   
   <style scoped lang="scss">
-
+#employeediv {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 100px;
+}
   </style>
   
