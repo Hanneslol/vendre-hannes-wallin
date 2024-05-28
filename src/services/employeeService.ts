@@ -8,3 +8,4 @@ export const getEmployees = async (): Promise<IEmployee[]> => {
   const data = await getApi<IEmployeeResponse>(url);
   return data.data;
 };
+

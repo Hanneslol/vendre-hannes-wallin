@@ -12,9 +12,16 @@ onMounted(async () => {
 </script>
 
 
+
+
+
 <template>
     <div id="employeediv">
       <Employee v-for="employee in employees" :key="employee.id" :data="employee" />
+    </div>
+    <div id="paging">
+        <button>Previous</button>
+        <button>Next</button>
     </div>
   </template>
   
