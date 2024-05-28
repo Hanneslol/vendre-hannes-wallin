@@ -1,13 +1,10 @@
-import { IEmplyee } from "../models/IEmplyee";
-import { IEmplyeeResponse } from "../models/IEmplyeeResoibe";
+import { IEmployee } from "../models/IEmployee";
+import { IEmployeeResponse } from "../models/IEmployeeResponse";
 import { getApi } from "./services";
 
+const url = "https://reqres.in/api/users";
 
-const url =
-  "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
-
-export const getEmplyees = async (): Promise<IEmplyee[]> => {
-  const data = await getApi<IEmplyeeResponse>(url);
-
-  return data.drinks;
+export const getEmployees = async (): Promise<IEmployee[]> => {
+  const data = await getApi<IEmployeeResponse>(url);
+  return data.data;
 };
