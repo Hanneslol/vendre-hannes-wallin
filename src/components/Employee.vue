@@ -54,6 +54,8 @@ h3 {
 h2 {
   color: black;
   font-size: 1.2rem;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
 a {
