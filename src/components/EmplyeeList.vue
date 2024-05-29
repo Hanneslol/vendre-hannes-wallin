@@ -45,7 +45,7 @@ const prevPage = () => {
     />
   </section>
   <section id="pagination">
-    <button @click="prevPage">Previous</button>
+    <button class="previousPage" @click="prevPage"><</button>
     <div v-for="pageNumber in total_pages">
       <button
         @click="goToPage(pageNumber)"
@@ -54,23 +54,43 @@ const prevPage = () => {
         {{ pageNumber }}
       </button>
     </div>
-    <button @click="nextPage(total_pages as number)">Next</button>
+    <button class="nextPage" @click="nextPage(total_pages as number)">></button>
   </section>
 </template>
 
 <style scoped lang="scss">
+@import "../assets/variables.scss";
+
 #employeediv {
   display: flex;
   justify-content: space-evenly;
-  gap: 100px;
+  gap: 50px;
 }
+
+@media only screen and (max-width: 768px) {
+  #employeediv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
 #pagination {
   display: flex;
   margin: 50px;
   justify-content: center;
 }
 button {
+  background-color: $secondary-color;
   opacity: 0.5;
+  // filter: drop-shadow(1px 1px 2px #717171);
+  box-shadow: 0px 1px 7px 0px rgba(122, 122, 122, 0.75);
+  color: black;
+  border-radius: 20%;
+  width: 50px;
+  height: 50px;
+  margin: 2px;
 }
 button:hover {
   opacity: 1;
@@ -78,5 +98,11 @@ button:hover {
 .active-page {
   opacity: 1;
   pointer-events: none;
+}
+
+.nextPage,
+.previousPage {
+  width: 50px;
+  height: 50px;
 }
 </style>
