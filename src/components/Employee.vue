@@ -25,12 +25,13 @@ defineProps<EmployeeProps>();
 @import "../assets/variables.scss";
 .employeeCard {
   // background-image: linear-gradient(to top, #b58caa 0%, #697a98 100%);
-  background-color: #ffffff5e;
+  background-color: rgba(255, 255, 255, 0.562);
   border-radius: 5%;
   width: 200px;
   height: 250px;
   // filter: drop-shadow(0px 1px 1px #717171);
-  box-shadow: 0px 1px 7px 0px rgba(122, 122, 122, 0.75);
+  box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.15);
+  // box-shadow: -4px 4px 15px 0 rgba(0, 0, 0, 0.05);
   animation: fadeInAnimation ease 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -58,7 +59,11 @@ defineProps<EmployeeProps>();
     margin-top: 30px;
     // border: #d5d5d5 5px solid;
     background: linear-gradient(white, white) padding-box,
-      linear-gradient(to bottom, #a6c1ee, #fbc2eb) border-box;
+      linear-gradient(to bottom, #cbddff, #fcd0ef) border-box;
+
+    // background: linear-gradient(white, white) padding-box,
+    //   linear-gradient(to bottom, #a6c1ee, #fbc2eb) border-box;
+
     border-radius: 50%;
     border: 4px solid transparent;
   }

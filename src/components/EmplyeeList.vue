@@ -86,12 +86,13 @@ const prevPage = () => {
   justify-content: center;
 }
 button {
-  background-color: $secondary-color;
+  background-color: $primary-color;
   opacity: 0.5;
   // filter: drop-shadow(1px 1px 2px #717171);
-  box-shadow: 0px 1px 7px 0px rgba(122, 122, 122, 0.75);
+  box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.15);
+
   border: solid 1px rgb(163, 163, 163);
-  color: black;
+  color: $text-color;
   border-radius: 20%;
   width: 50px;
   height: 50px;

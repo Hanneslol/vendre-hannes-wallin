@@ -15,7 +15,7 @@
 .description {
   text-align: center;
   p {
-    width: 60%;
+    width: 600px;
     text-align: center;
     display: inline-block;
   }
