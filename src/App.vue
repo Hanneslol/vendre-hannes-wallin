@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import EmployeesList from './components/EmplyeeList.vue'
-import Test from './components/Test.vue'
+import EmployeesList from "./components/EmplyeeList.vue";
+import OurEmployees from "./components/OurEmployees.vue";
 </script>
 
 <template>
-   <div id="app">
+  <div id="app">
+    <OurEmployees />
     <EmployeesList />
-  <Test></Test>
-   </div>
+  </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

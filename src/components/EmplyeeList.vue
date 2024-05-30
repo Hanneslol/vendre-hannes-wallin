@@ -63,8 +63,12 @@ const prevPage = () => {
 
 #employeediv {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   gap: 50px;
+  width: 600px;
+  margin: 0 auto;
+  max-width: 1000px;
+  margin-top: 5rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -86,6 +90,7 @@ button {
   opacity: 0.5;
   // filter: drop-shadow(1px 1px 2px #717171);
   box-shadow: 0px 1px 7px 0px rgba(122, 122, 122, 0.75);
+  border: solid 1px rgb(163, 163, 163);
   color: black;
   border-radius: 20%;
   width: 50px;

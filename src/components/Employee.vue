@@ -25,22 +25,42 @@ defineProps<EmployeeProps>();
 @import "../assets/variables.scss";
 .employeeCard {
   // background-image: linear-gradient(to top, #b58caa 0%, #697a98 100%);
-  background-color: #ffffff;
+  background-color: #ffffff5e;
   border-radius: 5%;
   width: 200px;
   height: 250px;
   // filter: drop-shadow(0px 1px 1px #717171);
   box-shadow: 0px 1px 7px 0px rgba(122, 122, 122, 0.75);
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  // background: linear-gradient(white, white) padding-box,
+  //   linear-gradient(to bottom, #fbc2eb, #a6c1ee) border-box;
+  // border-radius: 5%;
+  // border: 4px solid transparent;
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
+
 .imgContainer {
   img {
     width: 100px;
-    border-radius: 50%;
+    // border-radius: 50%;
     min-height: 100px;
     object-fit: cover;
     transition: transform 0.2s;
     margin-top: 30px;
-    border: #d5d5d5 5px solid;
+    // border: #d5d5d5 5px solid;
+    background: linear-gradient(white, white) padding-box,
+      linear-gradient(to bottom, #a6c1ee, #fbc2eb) border-box;
+    border-radius: 50%;
+    border: 4px solid transparent;
   }
 }
 
@@ -49,10 +69,10 @@ img:hover {
 }
 h3 {
   font-size: 1rem;
-  color: black;
+  color: $text-color;
 }
 h2 {
-  color: black;
+  color: $text-color;
   font-size: 1.2rem;
   margin-top: 20px;
   margin-bottom: 0px;
@@ -60,7 +80,7 @@ h2 {
 
 a {
   font-weight: 500;
-  color: #000000;
+  color: $text-color;
   text-decoration: inherit;
   transition-duration: 0.2s;
 }
