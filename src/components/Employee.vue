@@ -11,7 +11,7 @@ defineProps<EmployeeProps>();
 <template>
   <article class="employeeCard">
     <div class="imgContainer">
-      <img :src="data.avatar" :alt="data.first_name" />
+      <img :src="data.avatar" :alt="`${data.first_name} ${data.last_name}`" />
     </div>
     <h2>{{ data.first_name }} {{ data.last_name }}</h2>
     <div class="contact">

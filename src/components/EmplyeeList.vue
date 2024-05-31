@@ -37,16 +37,18 @@ const prevPage = () => {
 </script>
 
 <template>
-  <section>
-    <h1>Our Employees</h1>
-    <div class="description">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-        odio sed aliquam omnis eligendi, dolore quos dolores obcaecati. Dolor
-        quas omnis esse atque quis et. Expedita, dolorum? Inventore, facilis
-        aliquid.
-      </p>
-    </div>
+  <main>
+    <header>
+      <h1>Our Employees</h1>
+      <div class="description">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+          odio sed aliquam omnis eligendi, dolore quos dolores obcaecati. Dolor
+          quas omnis esse atque quis et. Expedita, dolorum? Inventore, facilis
+          aliquid.
+        </p>
+      </div>
+    </header>
     <section id="employeediv">
       <Employee
         v-for="employee in employees"
@@ -54,11 +56,11 @@ const prevPage = () => {
         :data="employee"
       />
     </section>
-    <nav id="pagination">
+    <nav id="pagination" aria-label="Employee pagination">
       <button class="previousPage" @click="prevPage" aria-label="Previous page">
         &lt;
       </button>
-      <div v-for="pageNumber in total_pages">
+      <div v-for="pageNumber in total_pages" :key="pageNumber">
         <button
           @click="goToPage(pageNumber)"
           :class="{ 'active-page': pageNumber === currentPage }"
@@ -75,7 +77,7 @@ const prevPage = () => {
         &gt;
       </button>
     </nav>
-  </section>
+  </main>
 </template>
 
 <style scoped lang="scss">
