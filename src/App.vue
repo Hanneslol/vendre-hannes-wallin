@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import EmployeesList from "./components/EmplyeeList.vue";
+import EmployeesList from "./components/EmployeeList.vue";
 </script>
 
 <template>

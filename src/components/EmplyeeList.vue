@@ -37,10 +37,10 @@ const prevPage = () => {
 </script>
 
 <template>
-  <main>
-    <header>
+  <main class="employee-list">
+    <header class="employee-list__header">
       <h1>Our Employees</h1>
-      <div class="description">
+      <div class="employee-list__description">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
           odio sed aliquam omnis eligendi, dolore quos dolores obcaecati. Dolor
@@ -49,15 +49,23 @@ const prevPage = () => {
         </p>
       </div>
     </header>
-    <section id="employeediv">
+    <section class="employee-list__content" id="employeediv">
       <Employee
         v-for="employee in employees"
         :key="employee.id"
         :data="employee"
       />
     </section>
-    <nav id="pagination" aria-label="Employee pagination">
-      <button class="previousPage" @click="prevPage" aria-label="Previous page">
+    <nav
+      class="employee-list__pagination"
+      id="pagination"
+      aria-label="Employee pagination"
+    >
+      <button
+        class="employee-list__pagination-button employee-list__pagination-button--previous"
+        @click="prevPage"
+        aria-label="Previous page"
+      >
         &lt;
       </button>
       <div v-for="pageNumber in total_pages" :key="pageNumber">
@@ -65,12 +73,13 @@ const prevPage = () => {
           @click="goToPage(pageNumber)"
           :class="{ 'active-page': pageNumber === currentPage }"
           :aria-label="'Page ' + pageNumber"
+          class="employee-list__pagination-button"
         >
           {{ pageNumber }}
         </button>
       </div>
       <button
-        class="nextPage"
+        class="employee-list__pagination-button employee-list__pagination-button--next"
         @click="nextPage(total_pages as number)"
         aria-label="Next page"
       >
@@ -82,8 +91,7 @@ const prevPage = () => {
 
 <style scoped lang="scss">
 @import "../assets/variables.scss";
-
-#employeediv {
+.employee-list__content {
   display: flex;
   justify-content: space-around;
   gap: 50px;
@@ -92,22 +100,20 @@ const prevPage = () => {
   max-width: 1000px;
   margin-top: 5rem;
 }
-
 @media only screen and (max-width: 768px) {
-  #employeediv {
+  .employee-list__content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
   }
 }
-
-#pagination {
+.employee-list__pagination {
   display: flex;
   margin: 50px;
   justify-content: center;
 }
-button {
+.employee-list__pagination-button {
   background-color: $primary-color;
   opacity: 0.5;
   box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.15);
@@ -118,26 +124,21 @@ button {
   height: 50px;
   margin: 2px;
 }
-button:hover {
+.employee-list__pagination-button:hover {
   opacity: 1;
 }
-.active-page {
-  opacity: 1;
-  pointer-events: none;
-}
-
-.nextPage,
-.previousPage {
+.employee-list__pagination-button--previous,
+.employee-list__pagination-button--next {
   width: 50px;
   height: 50px;
 }
-
-.description {
+.employee-list__pagination-button.active-page {
+  opacity: 1;
+  pointer-events: none;
+}
+.employee-list__description p {
+  width: 600px;
   text-align: center;
-  p {
-    width: 600px;
-    text-align: center;
-    display: inline-block;
-  }
+  display: inline-block;
 }
 </style>

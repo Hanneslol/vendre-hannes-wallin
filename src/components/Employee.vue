@@ -9,12 +9,12 @@ defineProps<EmployeeProps>();
 </script>
 
 <template>
-  <article class="employeeCard">
-    <div class="imgContainer">
+  <article class="employee-card">
+    <div class="employee-card__img-container">
       <img :src="data.avatar" :alt="`${data.first_name} ${data.last_name}`" />
     </div>
     <h2>{{ data.first_name }} {{ data.last_name }}</h2>
-    <div class="contact">
+    <div class="employee-card__contact">
       <a :href="`mailto:${data.email}`">Contact me</a>
     </div>
   </article>
@@ -22,7 +22,7 @@ defineProps<EmployeeProps>();
 
 <style scoped lang="scss">
 @import "../assets/variables.scss";
-.employeeCard {
+.employee-card {
   background-color: rgba(255, 255, 255, 0.562);
   border-radius: 5%;
   width: 200px;
@@ -41,7 +41,7 @@ defineProps<EmployeeProps>();
   }
 }
 
-.imgContainer {
+.employee-card__img-container {
   img {
     width: 100px;
     min-height: 100px;
@@ -54,10 +54,9 @@ defineProps<EmployeeProps>();
     border-radius: 50%;
     border: 4px solid transparent;
   }
-}
-
-img:hover {
-  transform: scale(1.2);
+  img:hover {
+    transform: scale(1.2);
+  }
 }
 
 h2 {
