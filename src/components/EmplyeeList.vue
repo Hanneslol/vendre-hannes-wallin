@@ -37,24 +37,44 @@ const prevPage = () => {
 </script>
 
 <template>
-  <section id="employeediv">
-    <Employee
-      v-for="employee in employees"
-      :key="employee.id"
-      :data="employee"
-    />
-  </section>
-  <section id="pagination">
-    <button class="previousPage" @click="prevPage"><</button>
-    <div v-for="pageNumber in total_pages">
-      <button
-        @click="goToPage(pageNumber)"
-        :class="{ 'active-page': pageNumber === currentPage }"
-      >
-        {{ pageNumber }}
-      </button>
+  <section>
+    <h1>Our Employees</h1>
+    <div class="description">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+        odio sed aliquam omnis eligendi, dolore quos dolores obcaecati. Dolor
+        quas omnis esse atque quis et. Expedita, dolorum? Inventore, facilis
+        aliquid.
+      </p>
     </div>
-    <button class="nextPage" @click="nextPage(total_pages as number)">></button>
+    <section id="employeediv">
+      <Employee
+        v-for="employee in employees"
+        :key="employee.id"
+        :data="employee"
+      />
+    </section>
+    <nav id="pagination">
+      <button class="previousPage" @click="prevPage" aria-label="Previous page">
+        &lt;
+      </button>
+      <div v-for="pageNumber in total_pages">
+        <button
+          @click="goToPage(pageNumber)"
+          :class="{ 'active-page': pageNumber === currentPage }"
+          :aria-label="'Page ' + pageNumber"
+        >
+          {{ pageNumber }}
+        </button>
+      </div>
+      <button
+        class="nextPage"
+        @click="nextPage(total_pages as number)"
+        aria-label="Next page"
+      >
+        &gt;
+      </button>
+    </nav>
   </section>
 </template>
 
@@ -88,9 +108,7 @@ const prevPage = () => {
 button {
   background-color: $primary-color;
   opacity: 0.5;
-  // filter: drop-shadow(1px 1px 2px #717171);
   box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.15);
-
   border: solid 1px rgb(163, 163, 163);
   color: $text-color;
   border-radius: 20%;
@@ -110,5 +128,14 @@ button:hover {
 .previousPage {
   width: 50px;
   height: 50px;
+}
+
+.description {
+  text-align: center;
+  p {
+    width: 600px;
+    text-align: center;
+    display: inline-block;
+  }
 }
 </style>

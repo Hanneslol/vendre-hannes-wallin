@@ -3,12 +3,8 @@
 :root {
   font-family: $primary-font;
   line-height: 1.5;
-  font-weight: 200;
-
-  color-scheme: light dark;
   color: $text-color;
   background-image: $background-color;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,12 +16,10 @@ body {
   display: flex;
   place-items: center;
   min-height: 100vh;
-  /* min-width: 320px; */
-  /* min-height: 100vh;  */
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3em;
   line-height: 1.1;
 }
 
@@ -36,9 +30,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  /* background-color: #b58caa; */
   background-color: #ffffff;
-  /* background-image: linear-gradient(to top, #b58caa 0%, #697a98 100%); */
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -46,19 +38,4 @@ button {
 #app {
   margin: auto;
   text-align: center;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
 }
