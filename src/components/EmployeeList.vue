@@ -93,6 +93,11 @@ const prevPage = () => {
     text-align: center;
     margin: 0 auto;
     padding: 1rem;
+    h1 {
+      @media only screen and (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
   }
   &__description {
     p {
