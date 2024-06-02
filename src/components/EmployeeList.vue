@@ -97,11 +97,9 @@ const prevPage = () => {
     text-align: center;
     margin: 0 auto;
     padding: 1rem;
-    width: 100%;
   }
   &__description {
     p {
-      width: 100%;
       max-width: 600px;
       text-align: center;
       display: inline-block;
