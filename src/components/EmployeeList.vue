@@ -93,9 +93,16 @@ const prevPage = () => {
 @import "../assets/variables.scss";
 
 .employee-list {
+  &__header {
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 100%;
+  }
   &__description {
     p {
-      width: 600px;
+      width: 100%;
+      max-width: 600px;
       text-align: center;
       display: inline-block;
     }
@@ -105,7 +112,7 @@ const prevPage = () => {
     display: flex;
     justify-content: space-around;
     gap: 50px;
-    width: 600px;
+    max-width: 600px;
     margin: 0 auto;
     max-width: 1000px;
     margin-top: 5rem;
