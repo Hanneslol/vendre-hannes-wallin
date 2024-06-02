@@ -91,54 +91,63 @@ const prevPage = () => {
 
 <style scoped lang="scss">
 @import "../assets/variables.scss";
-.employee-list__content {
-  display: flex;
-  justify-content: space-around;
-  gap: 50px;
-  width: 600px;
-  margin: 0 auto;
-  max-width: 1000px;
-  margin-top: 5rem;
-}
-@media only screen and (max-width: 768px) {
-  .employee-list__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+
+.employee-list {
+  &__description {
+    p {
+      width: 600px;
+      text-align: center;
+      display: inline-block;
+    }
   }
-}
-.employee-list__pagination {
-  display: flex;
-  margin: 50px;
-  justify-content: center;
-}
-.employee-list__pagination-button {
-  background-color: $primary-color;
-  opacity: 0.5;
-  box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.15);
-  border: solid 1px rgb(163, 163, 163);
-  color: $text-color;
-  border-radius: 20%;
-  width: 50px;
-  height: 50px;
-  margin: 2px;
-}
-.employee-list__pagination-button:hover {
-  opacity: 1;
-}
-.employee-list__pagination-button--previous,
-.employee-list__pagination-button--next {
-  width: 50px;
-  height: 50px;
-}
-.employee-list__pagination-button.active-page {
-  opacity: 1;
-  pointer-events: none;
-}
-.employee-list__description p {
-  width: 600px;
-  text-align: center;
-  display: inline-block;
+
+  &__content {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    width: 600px;
+    margin: 0 auto;
+    max-width: 1000px;
+    margin-top: 5rem;
+
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    margin: 50px;
+    justify-content: center;
+
+    &-button {
+      background-color: $primary-color;
+      opacity: 0.5;
+      box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.15);
+      border: solid 1px rgb(163, 163, 163);
+      color: $text-color;
+      border-radius: 20%;
+      width: 50px;
+      height: 50px;
+      margin: 2px;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &--previous,
+      &--next {
+        width: 50px;
+        height: 50px;
+      }
+
+      &.active-page {
+        opacity: 1;
+        pointer-events: none;
+      }
+    }
+  }
 }
 </style>

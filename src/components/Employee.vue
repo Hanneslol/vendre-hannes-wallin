@@ -22,6 +22,7 @@ defineProps<EmployeeProps>();
 
 <style scoped lang="scss">
 @import "../assets/variables.scss";
+
 .employee-card {
   background-color: rgba(255, 255, 255, 0.562);
   border-radius: 5%;
@@ -31,6 +32,7 @@ defineProps<EmployeeProps>();
   animation: fadeInAnimation ease 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+
   @keyframes fadeInAnimation {
     0% {
       opacity: 0;
@@ -39,42 +41,44 @@ defineProps<EmployeeProps>();
       opacity: 1;
     }
   }
-}
 
-.employee-card__img-container {
-  img {
-    width: 100px;
-    min-height: 100px;
-    object-fit: cover;
-    transition: transform 0.2s;
-    margin-top: 30px;
-    background: linear-gradient(white, white) padding-box,
-      linear-gradient(to bottom, #cbddff, #fcd0ef) border-box;
+  &__img-container {
+    img {
+      width: 100px;
+      min-height: 100px;
+      object-fit: cover;
+      transition: transform 0.2s;
+      margin-top: 30px;
+      background: linear-gradient(white, white) padding-box,
+        linear-gradient(to bottom, #cbddff, #fcd0ef) border-box;
+      border-radius: 50%;
+      border: 4px solid transparent;
 
-    border-radius: 50%;
-    border: 4px solid transparent;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
   }
-  img:hover {
-    transform: scale(1.2);
+
+  h2 {
+    color: $text-color;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 0px;
   }
-}
 
-h2 {
-  color: $text-color;
-  font-size: 1.2rem;
-  margin-top: 20px;
-  margin-bottom: 0px;
-}
+  &__contact {
+    a {
+      font-weight: 500;
+      color: $text-color;
+      text-decoration: inherit;
+      transition-duration: 0.2s;
 
-a {
-  font-weight: 500;
-  color: $text-color;
-  text-decoration: inherit;
-  transition-duration: 0.2s;
-}
-
-a:hover {
-  color: #7284a4;
-  font-size: 1.07rem;
+      &:hover {
+        color: #5a94ff;
+        font-size: 1.05rem;
+      }
+    }
+  }
 }
 </style>
