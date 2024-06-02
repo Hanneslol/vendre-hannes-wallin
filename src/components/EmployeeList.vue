@@ -126,6 +126,7 @@ const prevPage = () => {
     display: flex;
     margin: 50px;
     justify-content: center;
+    flex-wrap: wrap;
 
     &-button {
       background-color: $primary-color;
