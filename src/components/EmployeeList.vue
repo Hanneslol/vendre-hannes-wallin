@@ -49,18 +49,14 @@ const prevPage = () => {
         </p>
       </div>
     </header>
-    <section class="employee-list__content" id="employeediv">
+    <section class="employee-list__content">
       <Employee
         v-for="employee in employees"
         :key="employee.id"
         :data="employee"
       />
     </section>
-    <nav
-      class="employee-list__pagination"
-      id="pagination"
-      aria-label="Employee pagination"
-    >
+    <nav class="employee-list__pagination" aria-label="Employee pagination">
       <button
         class="employee-list__pagination-button employee-list__pagination-button--previous"
         @click="prevPage"
